@@ -1,0 +1,54 @@
+<?php if( !empty($errors) ): ?>
+    <aside class="errors">
+        <p><?= $errors ?></p>
+    </aside>
+<?php endif ?>
+<form method="post" class="tasklist" action="../controller/remove_task.php">
+    <fieldset>
+        <ul>
+            <?php if (!empty($finish_task)):?>
+            <legend>Tâches finies</legend>
+            <?php foreach($finish_task as $index => $task): ?>
+                <li class="<?= $task['id'] ?>">
+                    <input class="cb-del" type="checkbox" id="item<?=$index?>" name="del[]" value="<?=$task['id']?>">
+                    <label class="cb-del-label" for="item<?=$index?>"><?= $task['title'] ?></label>
+                    <input class="cb-ok" type="checkbox" id="item_check<?=$index?>" name="check[]" value="<?=$task['id']?>">
+                    <label style='margin-left:500px;' class="cb-ok-label" for="item_check<?=$index?>"></label>
+                    <p class="hidden"><?= $task['created_at'] ?></p>
+                </li>
+            <?php endforeach ?>
+            <li>
+                <button class="btn btn-danger" type="submit" name="remove_task"> Supprimer </button>
+                <a href="../controller/add_task.php"><button class="btn btn-info" type="button">  Cliquez ici pour ajouter une nouvelle tache</button></a>
+            </li>
+        </ul>
+        <?php else : ?>
+            <h1>Vous n'avez fini aucunes tâches.</h1>
+        <?php endif ?>
+    </fieldset>
+</form>
+<form method="post" class="tasklist" action="../controller/remove_task.php">
+    <fieldset>
+    <ul>
+        <?php if (!empty($inprogress_task)):?>
+            <legend>Tâches en cours</legend>
+        <?php foreach($inprogress_task as $index => $task): ?>
+            <li class="<?= $task['id'] ?>">
+                <input class="cb-del" type="checkbox" id="item<?=$index?>" name="del[]" value="<?=$task['id']?>">
+                <label class="cb-del-label" for="item<?=$index?>"><?= $task['title'] ?></label>
+                <input class="cb-ok" type="checkbox" id="item_check<?=$index?>" name="check[]" value="<?=$task['id']?>">
+                <label style='margin-left:500px;' class="cb-ok-label" for="item_check<?=$index?>"></label>
+                <p class="hidden"><?= $task['created_at'] ?></p>
+            </li>
+        <?php endforeach ?>
+            <li>
+                <button class="btn btn-danger" type="submit" name="remove_task"> Supprimer </button>
+                <button class="btn btn-success" type="submit" name="update_task"> Mettre à jour  </button>
+                <a href="../controller/add_task.php"><button class="btn btn-info" type="button">  Cliquez ici pour ajouter une nouvelle tache</button></a>
+            </li>
+    </ul>
+        <?php else : ?>
+            <h1>Vous n'avez aucune tâches en cours.</h1>
+            <a href="../controller/add_task.php"> <button class="btn btn-info" type="button">Cliquez ici pour ajouter une nouvelle tache</button></a>
+        <?php endif ?>
+</form>

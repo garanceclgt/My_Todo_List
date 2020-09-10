@@ -1,0 +1,25 @@
+
+<?php if( !empty($errors) ): ?>
+    <aside class="errors">
+        <p><?= $errors ?></p>
+    </aside>
+<?php endif ?>
+<form method="post" action="../controller/add_task.php">
+    <fieldset>
+        <legend>Ajouter une nouvelle tâche </legend>
+        <ul>
+            <li class="form-group row">
+                <label for="title" class="col-sm-2 col-form-label">Titre</label>
+                <input class="form-control" id="title"  name="title" placeholder="Titre de la tâche">
+            </li>
+            <li class="form-group row">
+                <label for="content" class="col-sm-2 col-form-label">Description</label>
+                <textarea class="form-control" id="content" name="content" placeholder="Description de la tâche"></textarea>
+            </li>
+            <li class="form-group row">
+                <label class="col-sm-2 col-form-label"></label>
+                <button class="btn btn-success" type="submit" name="add_task"> Enregistrer </button>
+            </li>
+        </ul>
+    </fieldset>
+</form>

@@ -1,0 +1,24 @@
+<form method="post" class="tasklist" action="remove_task.php">
+    <fieldset>
+        <ul>
+            <?php if (!empty($tasks)):?>
+            <legend>Liste des tâches</legend>
+            <?php foreach($tasks as $index => $task): ?>
+                <li class="<?= $task['id'] ?>">
+                    <input class="cb-del" type="checkbox" id="item<?=$index?>" name="del[]" value="<?=$task['id']?>">
+                    <label class="cb-del-label" for="item<?=$index?>"><?= $task['title'] ?></label>
+                    <p class="hidden"><?= $task['created_at'] ?></p>
+                </li>
+            <?php endforeach ?>
+            <li>
+                <button  class="btn btn-danger" type="submit" name="remove_task"> Supprimer </button>
+                <button  class="btn btn-info" type="button"> <a href="add_task.php"> Cliquez ici pour ajouter une tache</a> </button>
+            </li>
+        </ul>
+
+        <?php else : ?>
+            <h1>Vous n'avez aucune tâche</h1>
+            <button  class="btn btn-info" type="button"> <a href="add_task.php"> Cliquez ici pour ajouter une tache</a> </button>
+        <?php endif ?>
+    </fieldset>
+</form>

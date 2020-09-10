@@ -1,0 +1,106 @@
+
+
+.tasklist ul{
+    list-style-type: none;
+}
+
+.tasklist ul li:hover p{
+    display: block;
+}
+
+.tasklist input[type=checkbox]:checked + label {
+    text-decoration: line-through;
+}
+
+.hidden {
+    display:none
+}
+
+.select{
+    font-size: 0;
+}
+
+.tasklist p {
+    position: absolute;
+    background: white;
+    border: 1px solid #9bF;
+    padding: .2rem;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.tasklist button>a  {
+    text-decoration: none;
+    color:white;
+}
+
+.tasklist input[type=checkbox].cb-del{
+    position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+.tasklist input[type=checkbox].cb-del+ label.cb-del-label {
+    padding-left:20px;
+    height:15px;
+    display:inline-block;
+    line-height:15px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:15px;
+    vertical-align:middle;
+    cursor:pointer;
+
+}
+
+.tasklist input[type=checkbox].cb-del:checked + label.cb-del-label {
+    background-position: 0 -15px;
+}
+.tasklist label.cb-del-label {
+    background-image:url('../media/del_box.png');
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.tasklist input[type=checkbox].cb-ok {
+    position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+.tasklist input[type=checkbox].cb-ok + label.cb-ok-label {
+    padding-left:41px;
+    height:36px;
+    display:inline-block;
+    line-height:36px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:36px;
+    vertical-align:middle;
+    cursor:pointer;
+
+}
+
+.tasklist input[type=checkbox].cb-ok:checked + label.cb-ok-label {
+    background-position: 0 -36px;
+}
+.tasklist label.cb-ok-label {
+    background-image:url('../media/ok_box.png');
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.home-btn{
+    padding:2.5rem;
+    margin-left:7.5rem;
+    margin-top:5rem;
+}
+
+.home-h1{
+
+    text-decoration: underline;
+    text-align: center;
+}
